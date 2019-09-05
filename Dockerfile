@@ -37,7 +37,7 @@ RUN mkdir /php && \
         libk5crypto3 libkadm5clnt-mit8 libkadm5srv-mit8 libkdb5-6 libkeyutils1 \
         libkrb5-3 libkrb5-dev libkrb5support0 libldap2-dev libltdl-dev libltdl7 \
         libmagic-dev libmagic1 libmcrypt-dev libmcrypt4 libmhash-dev libmhash2 \
-        libmpc2 libmpfr4 libmysqlclient-dev libmysqlclient18 libncurses5-dev \
+        libmpc2 libmpfr4 libmysqlclient-dev libmysqlclient14 libncurses5-dev \
         libp11-kit-dev libpam0g-dev libpcre3-dev libpcrecpp0 libpng12-dev libpopt0 \
         libpq-dev libpq5 libpspell-dev libpthread-stubs0 libpthread-stubs0-dev \
         libquadmath0 libreadline-dev libreadline6-dev librtmp-dev librtmp0 \
