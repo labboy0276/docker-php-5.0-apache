@@ -1,9 +1,9 @@
-# Docker image for php 5.2 legacy projects
+# Docker image for php 5.0 legacy projects
 This docker image is intended to work as a replacement for old legacy projects, running on old server.
 The features are
 * Based on Ubuntu 12.04
 * Apache MPM Prefork
-* PHP 5.2.17 as apache mod
+* PHP 5.0.4 as apache mod
 * Zend Optimizer
 
 NOTE: To enable mailing, you need to configure ssmtp. This can be done by adding a file `ADD ssmtp.conf /etc/ssmtp/` containing a config like this
@@ -17,3 +17,5 @@ FromLineOverride=YES
 UseTLS=YES
 UseSTARTTLS=YES
 ```
+
+Forked and edited from the kuborgh/php-5.2 docker image.
