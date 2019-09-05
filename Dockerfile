@@ -10,7 +10,7 @@ RUN apt-get update && \
         libheimbase1-heimdal libheimntlm0-heimdal libhx509-5-heimdal \
         libkrb5-26-heimdal libldap-2.4-2 libp11-kit0 libroken18-heimdal libsasl2-2 \
         libsqlite3-0 libswitch-perl libtasn1-3 libwind0-heimdal mime-support perl \
-        perl-modules \
+        perl-modules flex bison \
     && \
     apt-get clean && \
     rm -Rf /var/lib/apt/lists/* && \
@@ -72,10 +72,10 @@ RUN mkdir /php && \
         --datadir=/usr/share \
         --sysconfdir=/etc \
         --localstatedir=/var/lib \
-        --prefix=/usr/lib/php5.2 \
-        --mandir=/usr/lib/php5.2/man \
-        --infodir=/usr/lib/php5.2/info \
-        --libdir=/usr/lib/php5.2/lib \
+        --prefix=/usr/lib/php5.0 \
+        --mandir=/usr/lib/php5.0/man \
+        --infodir=/usr/lib/php5.0/info \
+        --libdir=/usr/lib/php5.0/lib \
         --with-libdir=lib \
         --with-pear \
         --disable-maintainer-zts \
@@ -151,8 +151,8 @@ RUN mkdir /php && \
         --without-mm \
         --without-sqlite \
         --with-pcre-regex \
-        --with-config-file-path=/etc/php/apache2-php5.2 \
-        --with-config-file-scan-dir=/etc/php/apache2-php5.2/ext-active \
+        --with-config-file-path=/etc/php/apache2-php5.0 \
+        --with-config-file-scan-dir=/etc/php/apache2-php5.0/ext-active \
         --disable-cli \
         --disable-cgi \
         --disable-embed \
@@ -175,10 +175,10 @@ RUN mkdir /php && \
         --datadir=/usr/share \
         --sysconfdir=/etc \
         --localstatedir=/var/lib \
-        --prefix=/usr/lib/php5.2 \
-        --mandir=/usr/lib/php5.2/man \
-        --infodir=/usr/lib/php5.2/info \
-        --libdir=/usr/lib/php5.2/lib \
+        --prefix=/usr/lib/php5.0 \
+        --mandir=/usr/lib/php5.0/man \
+        --infodir=/usr/lib/php5.0/info \
+        --libdir=/usr/lib/php5.0/lib \
         --with-libdir=lib \
         --with-pear \
         --disable-maintainer-zts \
@@ -254,8 +254,8 @@ RUN mkdir /php && \
         --without-mm \
         --without-sqlite \
         --with-pcre-regex \
-        --with-config-file-path=/etc/php/cli-php5.2 \
-        --with-config-file-scan-dir=/etc/php/cli-php5.2/ext-active \
+        --with-config-file-path=/etc/php/cli-php5.0 \
+        --with-config-file-scan-dir=/etc/php/cli-php5.0/ext-active \
         --enable-cli \
         --disable-cgi \
         --disable-embed \
@@ -272,8 +272,8 @@ RUN mkdir /php && \
     cd /php && \
     wget http://downloads.zend.com/optimizer/3.3.3/ZendOptimizer-3.3.3-linux-glibc23-x86_64.tar.gz && \
     tar xzf ZendOptimizer-3.3.3-linux-glibc23-x86_64.tar.gz && \
-    mkdir /usr/lib/php5.2/modules && \
-    cp ZendOptimizer-3.3.3-linux-glibc23-x86_64/data/5_2_x_comp/ZendOptimizer.so /usr/lib/php5.2/modules/ && \
+    mkdir /usr/lib/php5.0/modules && \
+    cp ZendOptimizer-3.3.3-linux-glibc23-x86_64/data/5_2_x_comp/ZendOptimizer.so /usr/lib/php5.0/modules/ && \
 
     # Clean up
     rm -Rf /php && \
@@ -308,8 +308,8 @@ RUN mkdir /php && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY php.ini /etc/php/apache2-php5.2/
-COPY php.ini /etc/php/cli-php5.2/
+COPY php.ini /etc/php/apache2-php5.0/
+COPY php.ini /etc/php/cli-php5.0/
 
 # Enable mailing via ssmtp
 RUN apt-get update && \
