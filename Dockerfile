@@ -128,8 +128,6 @@ RUN mkdir /php && \
         --with-png-dir=/usr \
         --without-xpm-dir \
         --with-gd \
-        --with-imap \
-        --with-imap-ssl \
         --without-interbase \
         --with-mysql=/usr \
         --with-mysqli=/usr/bin/mysql_config \
@@ -226,8 +224,6 @@ RUN mkdir /php && \
         --with-png-dir=/usr \
         --without-xpm-dir \
         --with-gd \
-        --with-imap \
-        --with-imap-ssl \
         --without-interbase \
         --with-mysql=/usr \
         --with-mysqli=/usr/bin/mysql_config \
