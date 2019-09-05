@@ -29,9 +29,9 @@ RUN mkdir /php && \
         comerr-dev cpp cpp-4.6 dpkg-dev g++ g++-4.6 gcc gcc-4.6 krb5-multidev \
         libapr1-dev libaprutil1-dev libaspell-dev libaspell15 libbz2-dev \
         libc-client2007e libc-client2007e-dev libc-dev-bin libc6-dev libcurl3 \
-        libdpkg-perl libexpat1-dev libfreetype6 \
+        libcurl4-openssl-dev libdpkg-perl libexpat1-dev libfreetype6 \
         libfreetype6-dev libgcrypt11-dev libgdbm-dev libgmp10 libgnutls-dev \
-        libgnutlsxx27 libgomp1 libgpg-error-dev \
+        libgnutlsxx27 libgomp1 libgpg-error-dev libcurl4-gnutls-dev \
         libgssapi-krb5-2 libgssrpc4 libice-dev libice6 libidn11 libidn11-dev \
         libjpeg-dev libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev \
         libk5crypto3 libkadm5clnt-mit8 libkadm5srv-mit8 libkdb5-6 libkeyutils1 \
@@ -46,7 +46,7 @@ RUN mkdir /php && \
         libx11-dev libxau-dev libxau6 libxaw7 libxaw7-dev libxcb1 libxcb1-dev \
         libxdmcp-dev libxdmcp6 libxext-dev libxext6 libxml2 libxml2-dev libxmu-dev \
         libxmu-headers libxmu6 libxpm-dev libxpm4 libxt-dev libxt6 linux-libc-dev \
-        m4 make mlock mysql-common patch pkg-config uuid-dev wget \
+        m4 make mlock mysql-common patch pkg-config uuid-dev wget curl \
         x11-common x11proto-core-dev x11proto-input-dev x11proto-kb-dev \
         x11proto-xext-dev xorg-sgml-doctools xtrans-dev zlib1g-dev \
     && \
