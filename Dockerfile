@@ -80,8 +80,6 @@ RUN mkdir /php && \
         --enable-bcmath \
         --with-bz2 \
         --enable-calendar \
-        --with-curl \
-        --with-curlwrappers \
         --disable-dbase \
         --enable-exif \
         --without-fbsql \
@@ -180,8 +178,6 @@ RUN mkdir /php && \
         --enable-bcmath \
         --with-bz2 \
         --enable-calendar \
-        --with-curl \
-        --with-curlwrappers \
         --disable-dbase \
         --enable-exif \
         --without-fbsql \
