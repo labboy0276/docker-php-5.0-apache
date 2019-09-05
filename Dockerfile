@@ -20,7 +20,7 @@ RUN apt-get update && \
 COPY 000-project.conf /etc/apache2/sites-enabled/
 
 # Download an build PHP 5.0.4
-# See https://askubuntu.com/questions/597462/how-to-install-php-5-2-x-on-ubuntu-14-04
+# See http://www.linuxfromscratch.org/blfs/view/6.1/general/php.html
 RUN mkdir /php && \
     cd /php && \
     apt-get update && \
@@ -29,9 +29,9 @@ RUN mkdir /php && \
         comerr-dev cpp cpp-4.6 dpkg-dev g++ g++-4.6 gcc gcc-4.6 krb5-multidev \
         libapr1-dev libaprutil1-dev libaspell-dev libaspell15 libbz2-dev \
         libc-client2007e libc-client2007e-dev libc-dev-bin libc6-dev libcurl3 \
-        libcurl4-openssl-dev libdpkg-perl libexpat1-dev libfreetype6 \
+        libdpkg-perl libexpat1-dev libfreetype6 \
         libfreetype6-dev libgcrypt11-dev libgdbm-dev libgmp10 libgnutls-dev \
-        libgnutls-openssl27 libgnutlsxx27 libgomp1 libgpg-error-dev \
+        libgnutlsxx27 libgomp1 libgpg-error-dev \
         libgssapi-krb5-2 libgssrpc4 libice-dev libice6 libidn11 libidn11-dev \
         libjpeg-dev libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev \
         libk5crypto3 libkadm5clnt-mit8 libkadm5srv-mit8 libkdb5-6 libkeyutils1 \
@@ -46,7 +46,7 @@ RUN mkdir /php && \
         libx11-dev libxau-dev libxau6 libxaw7 libxaw7-dev libxcb1 libxcb1-dev \
         libxdmcp-dev libxdmcp6 libxext-dev libxext6 libxml2 libxml2-dev libxmu-dev \
         libxmu-headers libxmu6 libxpm-dev libxpm4 libxt-dev libxt6 linux-libc-dev \
-        m4 make mlock mysql-common openssl patch pkg-config uuid-dev wget \
+        m4 make mlock mysql-common patch pkg-config uuid-dev wget \
         x11-common x11proto-core-dev x11proto-input-dev x11proto-kb-dev \
         x11proto-xext-dev xorg-sgml-doctools xtrans-dev zlib1g-dev \
     && \
@@ -57,8 +57,6 @@ RUN mkdir /php && \
     ln -s /usr/lib/x86_64-linux-gnu/libkrb5.* /usr/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.* /usr/lib/ && \
     cd php-5.0.4; \
-    wget -c -t 3 -O ./debian_patches_disable_SSLv2_for_openssl_1_0_0.patch https://bugs.php.net/patch-display.php\?bug_id\=54736\&patch\=debian_patches_disable_SSLv2_for_openssl_1_0_0.patch\&revision=1305414559\&download\=1 && \
-    patch -p1 -b < debian_patches_disable_SSLv2_for_openssl_1_0_0.patch && \
 
     # Build apache module
     ./configure \
@@ -99,8 +97,6 @@ RUN mkdir /php && \
         --without-msql \
         --without-mssql \
         --with-ncurses \
-        --with-openssl \
-        --with-openssl-dir=/usr \
         --disable-pcntl \
         --without-pgsql \
         --with-pspell \
@@ -201,8 +197,6 @@ RUN mkdir /php && \
         --without-msql \
         --without-mssql \
         --with-ncurses \
-        --with-openssl \
-        --with-openssl-dir=/usr \
         --disable-pcntl \
         --without-pgsql \
         --with-pspell \
@@ -282,9 +276,9 @@ RUN mkdir /php && \
         comerr-dev cpp cpp-4.6 dpkg-dev g++ g++-4.6 gcc gcc-4.6 krb5-multidev \
         libapr1-dev libaprutil1-dev libaspell-dev libbz2-dev \
         libc-client2007e-dev libc-dev-bin libc6-dev \
-        libcurl4-openssl-dev libdpkg-perl libexpat1-dev \
+        libdpkg-perl libexpat1-dev \
         libfreetype6-dev libgcrypt11-dev libgdbm-dev libgmp10 libgnutls-dev \
-        libgnutls-openssl27 libgnutlsxx27 libgomp1 libgpg-error-dev \
+        libgnutlsxx27 libgomp1 libgpg-error-dev \
         libgssrpc4 libice-dev libice6 libidn11-dev \
         libjpeg-dev libjpeg-turbo8-dev libjpeg8-dev \
         libkadm5clnt-mit8 libkadm5srv-mit8 libkdb5-6 \
