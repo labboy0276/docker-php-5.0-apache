@@ -19,7 +19,7 @@ RUN apt-get update && \
     rm /etc/apache2/sites-enabled/000-default
 COPY 000-project.conf /etc/apache2/sites-enabled/
 
-# Download an build PHP 5.2.17
+# Download an build PHP 5.0.4
 # See https://askubuntu.com/questions/597462/how-to-install-php-5-2-x-on-ubuntu-14-04
 RUN mkdir /php && \
     cd /php && \
@@ -50,16 +50,16 @@ RUN mkdir /php && \
         x11-common x11proto-core-dev x11proto-input-dev x11proto-kb-dev \
         x11proto-xext-dev xorg-sgml-doctools xtrans-dev zlib1g-dev \
     && \
-    wget http://museum.php.net/php5/php-5.2.17.tar.bz2 && \
-    tar xfj php-5.2.17.tar.bz2 && \
+    wget http://museum.php.net/php5/php-5.0.4.tar.bz2 && \
+    tar xfj php-5.0.4.tar.bz2 && \
     ln -s /usr/lib/x86_64-linux-gnu/libjpeg.* /usr/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libpng.* /usr/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libkrb5.* /usr/lib/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.* /usr/lib/ && \
-    cd php-5.2.17; \
+    cd php-5.0.4; \
     wget -c -t 3 -O ./debian_patches_disable_SSLv2_for_openssl_1_0_0.patch https://bugs.php.net/patch-display.php\?bug_id\=54736\&patch\=debian_patches_disable_SSLv2_for_openssl_1_0_0.patch\&revision=1305414559\&download\=1 && \
     patch -p1 -b < debian_patches_disable_SSLv2_for_openssl_1_0_0.patch && \
-    
+
     # Build apache module
     ./configure \
         --bindir=/usr/bin \
@@ -162,7 +162,7 @@ RUN mkdir /php && \
     && \
     make && \
     make install && \
-    
+
     # Build cli
     ./configure \
         --bindir=/usr/bin \
