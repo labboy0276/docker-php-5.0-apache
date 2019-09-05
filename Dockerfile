@@ -28,7 +28,7 @@ RUN mkdir /php && \
         apache2-prefork-dev autoconf binutils build-essential bzip2 ca-certificates \
         comerr-dev cpp cpp-4.6 dpkg-dev g++ g++-4.6 gcc gcc-4.6 krb5-multidev \
         libapr1-dev libaprutil1-dev libaspell-dev libaspell15 libbz2-dev \
-        libc-client2007e libc-client2007e-dev libc-dev-bin libc6-dev libcurl3 \
+        libc-client2007e libc-client2007e-dev libc-dev-bin libc6-dev libcurl4-gnutls-dev \
         libdpkg-perl libexpat1-dev libfreetype6 \
         libfreetype6-dev libgcrypt11-dev libgdbm-dev libgmp10 libgnutls-dev \
         libgnutlsxx27 libgomp1 libgpg-error-dev \
