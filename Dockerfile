@@ -10,7 +10,7 @@ RUN apt-get update && \
         libheimbase1-heimdal libheimntlm0-heimdal libhx509-5-heimdal \
         libkrb5-26-heimdal libldap-2.4-2 libp11-kit0 libroken18-heimdal libsasl2-2 \
         libsqlite3-0 libswitch-perl libtasn1-3 libwind0-heimdal mime-support perl \
-        perl-modules flex bison \
+        perl-modules flex bison apt-utils \
     && \
     apt-get clean && \
     rm -Rf /var/lib/apt/lists/* && \
@@ -117,7 +117,6 @@ RUN mkdir /php && \
         --disable-wddx \
         --disable-xmlreader \
         --disable-xmlwriter \
-        --with-xmlrpc \
         --without-xsl \
         --enable-zip \
         --with-zlib \
@@ -220,7 +219,6 @@ RUN mkdir /php && \
         --disable-wddx \
         --disable-xmlreader \
         --disable-xmlwriter \
-        --with-xmlrpc \
         --without-xsl \
         --enable-zip \
         --with-zlib \
