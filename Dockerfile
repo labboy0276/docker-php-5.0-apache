@@ -29,9 +29,9 @@ RUN mkdir /php && \
         comerr-dev cpp cpp-4.6 dpkg-dev g++ g++-4.6 gcc gcc-4.6 krb5-multidev \
         libapr1-dev libaprutil1-dev libaspell-dev libaspell15 libbz2-dev \
         libc-client2007e libc-client2007e-dev libc-dev-bin libc6-dev libcurl3 \
-        libcurl4-openssl-dev libdpkg-perl libexpat1-dev libfreetype6 \
+        libdpkg-perl libexpat1-dev libfreetype6 \
         libfreetype6-dev libgcrypt11-dev libgdbm-dev libgmp10 libgnutls-dev \
-        libgnutlsxx27 libgomp1 libgpg-error-dev libcurl4-gnutls-dev \
+        libgnutlsxx27 libgomp1 libgpg-error-dev \
         libgssapi-krb5-2 libgssrpc4 libice-dev libice6 libidn11 libidn11-dev \
         libjpeg-dev libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev \
         libk5crypto3 libkadm5clnt-mit8 libkadm5srv-mit8 libkdb5-6 libkeyutils1 \
